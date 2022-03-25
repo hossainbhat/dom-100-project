@@ -6,12 +6,17 @@ function main(){
     const root = document.getElementById('root');
     const btn = document.getElementById('change-btn');
     const output = document.getElementById('output');
+    const copybtn = document.getElementById('copy-btn');
 
     btn.addEventListener('click',function(){
         const hexColor = generateHexCodeColor();
 
         root.style.backgroundColor = hexColor;
         output.value = hexColor;
+    })
+
+    copybtn.addEventListener('click',function(){
+        navigator.clipboard.writeText(output.value);
     })
 }
 
